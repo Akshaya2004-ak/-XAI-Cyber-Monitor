@@ -1,0 +1,18 @@
+url,label
+http://site.com?q=<body onload=alert('xss')>,1
+http://example.com/home,0
+http://site.com/auth?user=' OR 1=1 --,1
+https://profile.social.com/view?user=john_doe,0
+http://example.com/search?q=test'%20OR%20'1'%20=%20'1,1
+https://shopping.com/products?category=books,0
+http://newsportal.com/article?id=4523,0
+http://shop.com/?input=%3Cscript%3Ealert('x')%3C%2Fscript%3E,1
+http://docs.site.com/download?file=report.pdf,0
+http://weatherinfo.com/today?location=delhi,0
+http://victim.com/search?q=<script>alert('XSS')</script>,1
+http://example.com/items?id=10 OR 1=1,1
+http://page.com/?value=%22%3E%3Cscript%3Ealert(1)%3C/script%3E,1
+http://comments.com/post?id=5&comment=<img src=x onerror=alert('x')>,1
+http://bank.com/transfer?amount=1000&to=1234; DROP TABLE users;,1
+http://example.com/login?username=admin'--&password=,1
+https://edu-site.org/login?user=student&pass=1234,0
